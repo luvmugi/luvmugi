@@ -1,11 +1,20 @@
 <template>
-    <el-container class="main">
-      <el-header>Header</el-header>
+    <el-container class="layout-container ">
+      <el-header> 
+        <Menu></Menu>
+      </el-header>
       <el-container>
-        <el-aside width="200px">Aside</el-aside>
+     <!--    <el-aside width="200px">Aside</el-aside> -->
         <el-container>
-          <el-main>Main</el-main>
-          <el-footer>Footer</el-footer>
+          <el-main>
+            <router-view></router-view>
+          </el-main>
+          <el-footer> 
+            <div>   
+             <Message style="width: 1em; height: 1em" />  
+            luvmugi@163.com
+            </div>
+          </el-footer>
         </el-container>
       </el-container>
     </el-container>
@@ -14,54 +23,20 @@
 <script>
 // @ is an alias to /src
 //import HelloWorld from '@/components/HelloWorld.vue'
-
+// import { Menu } from '@/components/Menu.vue'
+import Menu from '../components/menu/Menu.vue'
+import {Message} from '@element-plus/icons'
 export default {
 	name: 'Home',
-	// components: {
-	// 	HelloWorld,
-	// },
+	components: {
+      Menu,
+      Message
+	},
 	mounted() {
 		console.log(process.env.VUE_APP_BASE_API)
 	},
 }
 </script>
-<style>
-.el-main{
-	width:100% ;
-	height:100% ;
-}
-.el-header,
-.el-footer {
-  background-color: #b3c0d1;
-  color: var(--el-text-color-primary);
-  text-align: center;
-  line-height: 60px;
-}
-
-.el-aside {
-  background-color: #d3dce6;
-  color: var(--el-text-color-primary);
-  text-align: center;
-  line-height: 200px;
-}
-
-.el-main {
-  background-color: #e9eef3;
-  color: var(--el-text-color-primary);
-  text-align: center;
-  line-height: 160px;
-}
-
-body > .el-container {
-  margin-bottom: 40px;
-}
-
-.el-container:nth-child(5) .el-aside,
-.el-container:nth-child(6) .el-aside {
-  line-height: 260px;
-}
-
-.el-container:nth-child(7) .el-aside {
-  line-height: 320px;
-}
+<style scoped>
+@import url('../assets/css/global.css');
 </style>

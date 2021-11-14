@@ -1,0 +1,58 @@
+:root {
+	/* 粉色 */
+	/* 露草色*/
+
+	--color-basis: rgb(88, 94, 170, 0.5);
+}
+
+html,
+body,
+#app {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-image: url(../images/background.jpg);
+}
+.layout-container {
+	height: 100%;
+}
+.el-header {
+	background-color: var(--color-basis);
+	/* padding: 0px; */
+}
+
+.el-footer {
+	background-color: var(--color-basis);
+	padding: 0px;
+	color: var(--el-color-white);
+	text-align: center;
+	line-height: 60px;
+}
+
+.el-aside {
+	background-color: #d3dce6;
+	color: var(--el-text-color-primary);
+	text-align: center;
+	line-height: 200px;
+}
+
+.el-main {
+	width: 100%;
+	height: 100%;
+	color: var(--el-text-color-primary);
+	text-align: center;
+	/* line-height: 160px; */
+}
+
+body > .el-container {
+	margin-bottom: 40px;
+}
+
+.el-container:nth-child(5) .el-aside,
+.el-container:nth-child(6) .el-aside {
+	line-height: 260px;
+}
+
+.el-container:nth-child(7) .el-aside {
+	line-height: 320px;
+}
